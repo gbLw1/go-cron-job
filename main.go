@@ -1,18 +1,19 @@
 package main
 
 import (
-  "time"
-  "github.com/robfig/cron/v3"
+	"time"
+
+	"github.com/robfig/cron/v3"
 )
 
 func main() {
 	loc, err := time.LoadLocation("America/Sao_Paulo")
-  if err != nil {
-    panic(err)
-  }
+	if err != nil {
+		panic(err)
+	}
 
-  cronJob := cron.WithLocation(loc)
+	cronJob := cron.WithLocation(loc)
 
-  cronJob.AddFunc("* * * * * *", func() {
-  })
+	cronJob.AddFunc("* * * * * *", func() {
+	})
 }
